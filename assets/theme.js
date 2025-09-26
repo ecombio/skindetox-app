@@ -5421,3 +5421,56 @@ class productList extends HTMLElement{
 
 customElements.define('product-list', productList);
 
+/* ============================================================
+   Custom JavaScript Section
+   ------------------------------------------------------------
+   Add your custom scripts below this line. This area is reserved
+   for theme-specific enhancements, overrides, or integrations.
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ----------------------------
+  // MOBILE SEARCH TOGGLE
+  // ----------------------------
+  const mobileSearchBtn = document.querySelector('.header_search .search__button, .header_search .action-search');
+  const mobileSearchForm = document.getElementById('search-form');
+
+  mobileSearchBtn?.addEventListener('click', function(e) {
+    e.preventDefault();
+    mobileSearchForm.classList.toggle('bls__opend-popup-header');
+  });
+
+  const searchCloseBtn = mobileSearchForm?.querySelector('.button-close');
+  searchCloseBtn?.addEventListener('click', function() {
+    mobileSearchForm.classList.remove('bls__opend-popup-header');
+  });
+
+  // ----------------------------
+  // MOBILE ACCOUNT/LOGIN TOGGLE
+  // ----------------------------
+  const mobileAccountBtn = document.querySelector('.header_account .action-login');
+  const accountPanel = document.querySelector('#account-popup, .account-popup'); // adjust if you have a custom account panel
+
+  mobileAccountBtn?.addEventListener('click', function(e) {
+    e.preventDefault();
+    accountPanel?.classList.toggle('open'); // Add your open class or toggle logic
+  });
+
+  // ----------------------------
+  // MOBILE CART TOGGLE
+  // ----------------------------
+  const mobileCartBtn = document.querySelector('#cart-icon-bubble');
+  const mobileCartWrapper = document.querySelector('.bls-minicart-wrapper');
+
+  mobileCartBtn?.addEventListener('click', function(e) {
+    e.preventDefault();
+    mobileCartWrapper?.classList.toggle('bls__canvas-right--open'); // opens the slide-out cart
+  });
+
+  const cartCloseBtn = mobileCartWrapper?.querySelector('.close-button, .close-cart');
+  cartCloseBtn?.addEventListener('click', function() {
+    mobileCartWrapper?.classList.remove('bls__canvas-right--open');
+  });
+
+});
