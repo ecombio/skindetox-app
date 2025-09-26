@@ -7154,9 +7154,3 @@ recipient-form .recipient-fields__field:last-child {
   position: relative;
   z-index: 9999;
 }
-@media (max-width: 1024px) {
-  .bls__canvas-top {
-    top: 0 !important;
-    margin-top: 0 !important;
-  }
-}
