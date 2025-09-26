@@ -1,0 +1,305 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_iNXTiV": {
+      "type": "slideshow",
+      "blocks": {
+        "slider_item_WapdJx": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify://shop_images/freepik__expand__73340.png",
+            "image_mobile": "shopify://shop_images/freepik__expand__73340.png",
+            "content_box": "content_in_container_fullwidth",
+            "content_custom_width": true,
+            "content_width": 100,
+            "content_background_color": "",
+            "content_opacity": 100,
+            "horizontal_position": "center_position",
+            "vertical_position": "middle_position",
+            "slider_effect": "effect_fadeindown",
+            "text_alignment": "center",
+            "text_alignment_on_mobile": "center",
+            "subheading": "",
+            "title": "Heading",
+            "description": "<p>Description</p>",
+            "image_link": "",
+            "button_text": "← Go Back",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_WapdJx"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".bls__slideshow .swiper-slide-active .sf__slide-content > *:nth-child(1) {font-size: 32px; margin-bottom: 2px;}"
+      ],
+      "settings": {
+        "container": "full-width",
+        "slide_height": "custom-height",
+        "color_scheme": "default-color-scheme",
+        "image_behavior": "none",
+        "eb_vertical_menu": false,
+        "height_dk": 280,
+        "height_tb": 280,
+        "height_mb": 140,
+        "heading_font_size": "110",
+        "heading_font_weight": "default",
+        "subheading_font_size": "12",
+        "subheading_font_weight": "default",
+        "description_font_size": "16",
+        "description_font_weight": "default",
+        "button_font_size": 16,
+        "button_font_weight": "600",
+        "design": "s-text-overlay-image",
+        "reset_color_mb": false,
+        "show_arrow_desktop": false,
+        "show_arrow_mobile": false,
+        "show_bullet_desktop": false,
+        "show_bullet_mobile": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "enable_effect": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "ea085fc8-6a0f-4823-bcb2-7a4499c86a3e": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "women-s-shirts"
+          }
+        },
+        "351de355-2d9a-4419-bbbe-d66a42cc221d": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "winter-coat"
+          }
+        },
+        "2a798250-3b81-49bf-9de6-e1f903decdfa": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "sportswear"
+          }
+        },
+        "8577aa4b-476d-46ef-9217-f7083df3d4dc": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "top-dresses"
+          }
+        },
+        "a227fdce-867c-4733-a957-ffaf5776a834": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "top-t-shirt"
+          }
+        },
+        "0ccdcafb-5062-42a8-a2b3-4c98c62c1be4": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "sweaters"
+          }
+        },
+        "c5da3331-aa2c-4eef-b5af-63ad326a1754": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "overalls"
+          }
+        },
+        "6ef1f09e-c7b3-41d6-9013-2865c97d192f": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "winter-coat"
+          }
+        },
+        "36cbffdb-96eb-4132-be88-07c82ecc6852": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "underwear"
+          }
+        },
+        "7cef24cd-52eb-4394-9b74-d0680b109352": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "arrivals"
+          }
+        },
+        "e425ca88-a522-4687-9387-d2afa437c860": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "denim-shirt"
+          }
+        },
+        "ebe3ece7-fab1-44ca-a21e-9e3a60f4fed9": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "handbag"
+          }
+        },
+        "e6c70ee5-ad38-44f3-b002-bdd1595c2f7c": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "blazers"
+          }
+        },
+        "a9fad167-3a8e-49b4-84b7-e553b4be1e6e": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "hot-swimwear"
+          }
+        },
+        "aec04ab4-c9aa-4634-816b-3591163296a7": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "home-page"
+          }
+        },
+        "83f2a913-b173-4195-b40a-6efcb975e1cf": {
+          "type": "collection",
+          "settings": {
+            "title_collection": "",
+            "collection": "shop"
+          }
+        }
+      },
+      "block_order": [
+        "ea085fc8-6a0f-4823-bcb2-7a4499c86a3e",
+        "351de355-2d9a-4419-bbbe-d66a42cc221d",
+        "2a798250-3b81-49bf-9de6-e1f903decdfa",
+        "8577aa4b-476d-46ef-9217-f7083df3d4dc",
+        "a227fdce-867c-4733-a957-ffaf5776a834",
+        "0ccdcafb-5062-42a8-a2b3-4c98c62c1be4",
+        "c5da3331-aa2c-4eef-b5af-63ad326a1754",
+        "6ef1f09e-c7b3-41d6-9013-2865c97d192f",
+        "36cbffdb-96eb-4132-be88-07c82ecc6852",
+        "7cef24cd-52eb-4394-9b74-d0680b109352",
+        "e425ca88-a522-4687-9387-d2afa437c860",
+        "ebe3ece7-fab1-44ca-a21e-9e3a60f4fed9",
+        "e6c70ee5-ad38-44f3-b002-bdd1595c2f7c",
+        "a9fad167-3a8e-49b4-84b7-e553b4be1e6e",
+        "aec04ab4-c9aa-4634-816b-3591163296a7",
+        "83f2a913-b173-4195-b40a-6efcb975e1cf"
+      ],
+      "settings": {
+        "container": "full-width",
+        "title": "",
+        "des_collection": "",
+        "type": "all",
+        "sort": "alphabetical",
+        "layout": "layout-2",
+        "hover_effect": "none",
+        "images_style": "radius",
+        "image_ratio": "custom",
+        "custom_ratio": "377:464",
+        "show_count_product": true,
+        "columns_desktop": 4,
+        "show_button": true,
+        "btn_text": "Shop now",
+        "show_description": true,
+        "limit_content_des": 23,
+        "column_gap": 30,
+        "collection_infinite_scroll": true,
+        "collection_limit": 4,
+        "button_show_more": "Show more collections"
+      }
+    },
+    "slideshow_nffnm7": {
+      "type": "slideshow",
+      "blocks": {
+        "slider_item_gQmqB3": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify://shop_images/freepik__expand__73340.png",
+            "image_mobile": "shopify://shop_images/freepik__expand__73340.png",
+            "content_box": "content_in_container_fullwidth",
+            "content_custom_width": true,
+            "content_width": 100,
+            "content_background_color": "",
+            "content_opacity": 100,
+            "horizontal_position": "center_position",
+            "vertical_position": "middle_position",
+            "slider_effect": "effect_fadeindown",
+            "text_alignment": "center",
+            "text_alignment_on_mobile": "center",
+            "subheading": "",
+            "title": "Heading",
+            "description": "<p>Description</p>",
+            "image_link": "",
+            "button_text": "Shop now",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_gQmqB3"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".bls__slideshow .swiper-slide-active .sf__slide-content > *:nth-child(1) {font-size: 32px; margin-bottom: 2px;}"
+      ],
+      "settings": {
+        "container": "full-width",
+        "slide_height": "custom-height",
+        "color_scheme": "default-color-scheme",
+        "image_behavior": "none",
+        "eb_vertical_menu": false,
+        "height_dk": 280,
+        "height_tb": 280,
+        "height_mb": 140,
+        "heading_font_size": "110",
+        "heading_font_weight": "default",
+        "subheading_font_size": "12",
+        "subheading_font_weight": "default",
+        "description_font_size": "16",
+        "description_font_weight": "default",
+        "button_font_size": 16,
+        "button_font_weight": "600",
+        "design": "s-text-overlay-image",
+        "reset_color_mb": false,
+        "show_arrow_desktop": false,
+        "show_arrow_mobile": false,
+        "show_bullet_desktop": false,
+        "show_bullet_mobile": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "enable_effect": false,
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    }
+  },
+  "order": [
+    "slideshow_iNXTiV",
+    "main",
+    "slideshow_nffnm7"
+  ]
+}

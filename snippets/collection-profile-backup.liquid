@@ -1,0 +1,22 @@
+{% comment %}
+  This snippet renders the collection cover and collection card in two rows within a profile-container. The cover row now renders the collection cover, and the card row is centered.
+{% endcomment %}
+
+<style>
+  .cover-row {
+    /* Style for cover-row */
+  }
+  .card-row {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<div class="profile-container">
+  <div class="row cover-row">
+    {% render 'collection-cover' %}
+  </div>
+  <div class="row card-row">
+    {% render 'collection-card' %}
+  </div>
+</div>

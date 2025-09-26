@@ -1,0 +1,124 @@
+<!-- Snippet: technical-specifications.liquid -->
+<div id="technical-specs-overlay" class="overlay" style="
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+"></div>
+
+<div id="technical-specs-sidebar" class="sidebar" style="    transform: translateX(100%); /* Initially off-screen */
+">
+
+  <!-- Sidebar Header -->
+  <div class="sidebar-header" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 2px solid #f0f0f0;">
+    <h3 style="margin: 0; font-weight: bold; font-size: 16px;">Technical Specifications</h3>
+    <div class="close-sidebar" style="width: 30px; height: 30px; border: 1px solid #f0f0f0; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 20px;">&times;</div>
+  </div>
+
+  <!-- Sidebar Content -->
+  <div class="sidebar-content" style="margin-top: 20px;">
+    <!-- Product Title -->
+    <h4 style="margin: 0 0 20px;">{{ product.title }}</h4>
+    
+<div class="product-description">
+    {{ product.description }}
+</div>
+
+    <!-- Technical Description -->
+    {% if product.metafields.technical.description %}
+      <div class="technical-description" style="margin-bottom: 15px;">
+        <p>{{ product.metafields.technical.description | metafield_tag }}</p>
+      </div>
+    {% endif %}
+
+    <!-- Technical Specifications -->
+    {% if product.metafields.technical.specifications %}
+      <div class="specifications-table">
+        <p>{{ product.metafields.custom.size_chart }}</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Responsive CSS -->
+<style>
+  #technical-specs-overlay {
+  display: none; /* Hide overlay initially */
+}
+
+#technical-specs-sidebar {
+  transform: translateX(100%); /* Move sidebar off-screen */
+}
+  /* Desktop Styles */
+  @media (min-width: 1024px) {
+    #technical-specs-sidebar {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 450px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    z-index: 1000;
+    transform: translateX(0px);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px 0px 0px 10px;
+    overflow-y: auto;
+    /*padding-top: 140px;*/
+    }
+  }
+  /* Mobile Styles */
+  @media (max-width: 1024px) {
+    #technical-specs-sidebar {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px 10px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+    padding: 15px 15px 75px 15px;
+    z-index: 1000;
+    transform: translateX(0px);
+    /*transition: transform 0.3s ease-in-out;*/
+    border-radius: 10px 10px 0px 10px;
+    overflow-y: auto;
+    }
+  }
+</style>
+
+<!-- JavaScript for Sidebar Toggle -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sidebar = document.getElementById('technical-specs-sidebar');
+  const overlay = document.getElementById('technical-specs-overlay');
+
+  // Ensure overlay and sidebar are hidden on load
+  overlay.style.display = 'none';
+  sidebar.style.transform = 'translateX(100%)';
+
+  const closeButton = sidebar.querySelector('.close-sidebar');
+
+  // Function to Open Sidebar
+  function openSidebar() {
+    sidebar.style.transform = 'translateX(0)';
+    overlay.style.display = 'block';
+  }
+
+  // Function to Close Sidebar
+  function closeSidebar() {
+    sidebar.style.transform = 'translateX(100%)';
+    overlay.style.display = 'none';
+  }
+
+  // Open Sidebar Trigger
+  document.querySelector('[data-target="technical-specs-sidebar"]').addEventListener('click', openSidebar);
+
+  // Close Sidebar Events
+  closeButton.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+});
+</script>

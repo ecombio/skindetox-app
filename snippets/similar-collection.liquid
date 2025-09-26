@@ -1,0 +1,60 @@
+<div class="similar-collection-slider">
+  <!-- Debugging: Display raw data -->
+  <div>
+    <h3>Debug Output:</h3>
+    <pre>
+      {{ collection.metafields.similar.collections | json }}
+    </pre>
+  </div>
+
+  <!-- Similar Collections Section -->
+  {% if collection.metafields.similar and collection.metafields.similar.collections and collection.metafields.similar.collections.value.size > 0 %}
+    <div class="btn-group">
+      {% for similar_collection in collection.metafields.similar.collections.value %}
+        {% if similar_collection.title and similar_collection.url %}
+          <button onclick="location.href='{{ similar_collection.url }}';">{{ similar_collection.title }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No similar collections available.</p>
+  {% endif %}
+</div>
+
+<style>
+  .btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .btn-group button {
+    background-color: #04AA6D;
+    border: 1px solid green;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+
+  .btn-group::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .btn-group::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+
+  .btn-group::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+</style>

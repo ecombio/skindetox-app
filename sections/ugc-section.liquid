@@ -1,0 +1,211 @@
+<section class="ugc-section {% if section.settings.reverse_layout %}reverse{% endif %}">
+  <!-- Left Column for Media -->
+  <div class="ugc-content-column">
+    <div class="ugc-content-wrapper">
+      {% if section.settings.media_type == 'image' %}
+        {% if section.settings.image_placeholder %}
+          <img src="{{ section.settings.image_placeholder | img_url: 'master' }}" alt="{{ section.settings.image_alt_text }}" class="ugc-image">
+        {% else %}
+          <img src="{{ 'default-placeholder.png' | asset_url }}" alt="Default placeholder image" class="ugc-image">
+        {% endif %}
+      {% elsif section.settings.media_type == 'video' %}
+        {% if section.settings.video_url %}
+          <iframe src="{{ section.settings.video_url }}" frameborder="0" allowfullscreen class="ugc-video"></iframe>
+        {% else %}
+          <p>No video URL provided.</p>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Right Column for Context -->
+  <div class="ugc-context-column">
+    <div class="ugc-context-wrapper">
+      {% if section.settings.header_text %}
+        <h2>{{ section.settings.header_text }}</h2>
+      {% endif %}
+      
+      {% if section.settings.paragraph_text %}
+        <div class="ugc-paragraph">
+          {{ section.settings.paragraph_text }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_text and section.settings.button_link %}
+        <a href="{{ section.settings.button_link }}" class="btn">{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* Parent container styling */
+.ugc-section {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 1280px; /* Matches global content width */
+  margin: 0 auto; /* Centers the section */
+  gap: 2rem; /* Space between columns */
+  padding: 15px; /* Ensures no extra space inside the section */
+}
+
+.ugc-section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Media Column (Image/Video) */
+.ugc-content-column {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ugc-content-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.ugc-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.ugc-video {
+  width: 100%;
+  height: 360px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Context Column (Text and Button) */
+.ugc-context-column {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.ugc-paragraph a {
+  color: #0000EE;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.ugc-paragraph a:hover {
+  color: #0000D1;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Responsive Styling */
+@media (max-width: 757px) {
+  .ugc-section {
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .ugc-content-column,
+  .ugc-context-column {
+    flex: 1 1 100%;
+  }
+
+  .ugc-image {
+    max-height: 300px;
+  }
+
+  .ugc-video {
+    height: 240px;
+  }
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "UGC Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "default": "image",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image_placeholder",
+      "label": "Image Placeholder"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header Text",
+      "default": "Header"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_text",
+      "label": "Paragraph Text",
+      "default": "<p>This is a sample paragraph describing the product or providing additional context. <a href='https://example.com'>Learn More</a></p>"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Call-to-Action"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse Layout for Desktop",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "UGC Section"
+    }
+  ]
+}
+{% endschema %}
+
+

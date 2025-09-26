@@ -1,0 +1,50 @@
+<div id="sign-in" class="sign-in-form">
+  <h2>Sign in to SCOOTERBIO</h2>
+  {% form 'customer_login', class: 'customer-login-form' %}
+    {% if form.errors %}
+        <ul class="error error-list">
+          {% for field in form.errors %}
+              <li>
+                  {% if field == 'form' %}
+                      {{ form.errors.messages[field] }}
+                  {% else %}
+                    <a href="#SignInForm-{{ field }}" class="link link-underline">
+                      <span class="text">
+                          {{ form.errors.translated_fields[field] | capitalize }}
+                          {{ form.errors.messages[field] }}
+                      </span>
+                    </a>
+                  {% endif %}
+              </li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="form-group">
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Email address" 
+          name="customer[email]" 
+          required 
+        >
+        <label for="email">{{ 'customer.login_page.email' | t }}<span class="required">*</span></label>
+    </div>
+    <div class="form-group">
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="Password" 
+          name="customer[password]" 
+          required 
+        >
+        <label for="password">{{ 'customer.login_page.password' | t }}<span class="required">*</span></label>
+    </div>
+    <div class="form-actions mt-30 d-flex flex-column">
+        <input type="submit" class="btn-primary w-full text-center" value="Sign In">
+        <a href="{{ routes.account_recover_url }}" class="link link-underline mt-10">Lost your password?</a>
+        <div class="mt-20">Don't have an account? 
+          <a href="#" class="link link-underline" onclick="openSignUp()">Sign Up</a>
+        </div>
+    </div>
+  {% endform %}
+</div>

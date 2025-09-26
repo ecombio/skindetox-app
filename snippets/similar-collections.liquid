@@ -1,0 +1,213 @@
+<div class="carousel-wrapper">
+  <div class="carousel-container">
+    <div class="carousel">
+      {%- for collection_item in collections -%}
+      <div class="carousel-item">
+        <div class="collection-item relative">
+          <div class="bls__collection-infor text-center">
+            <h3 class="bls__collection-title m-0 d-inline-block padded-title">
+              <a href="{{ collection_item.url }}" class="d-block text-transform">
+                {{ collection_item.title | escape }}
+              </a>
+            </h3>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="fade-right"></div>
+  <div class="pagination-wrapper">
+    <button class="carousel-button prev" style="display:none;">Prev</button>
+    <div class="pagination-container"></div>
+    <button class="carousel-button next" style="display:none;">Next</button>
+  </div>
+</div>
+
+<style>
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  display: inline-flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+  cursor: grab;
+}
+
+.carousel:active {
+  cursor: grabbing;
+}
+
+.carousel-item {
+  display: inline-block;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.bls__collection-title {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: start;
+}
+
+.padded-title {
+  padding: 10px 15px;
+  background: #f8fafd;
+  border-radius: 28px;
+  border: 1px solid #f0f0f0;
+}
+.padded-title:hover {
+  background: #f0f0f0;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.prev {
+  margin-right: 5px;
+}
+
+.next {
+  margin-left: 5px;
+}
+
+.fade-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  z-index: 1;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselContainer = document.querySelector('.carousel-container');
+  const carousel = document.querySelector('.carousel');
+  const items = document.querySelectorAll('.carousel-item');
+  const paginationContainer = document.querySelector('.pagination-container');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  const itemWidth = items[0].offsetWidth + 15; // Including margin
+
+  // Create pagination dots
+  items.forEach((item, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('pagination-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      carouselContainer.scrollTo({
+        left: index * itemWidth,
+        behavior: 'smooth'
+      });
+      updateDots(index);
+      updateButtons();
+    });
+    paginationContainer.appendChild(dot);
+  });
+
+  const updateDots = (activeIndex) => {
+    document.querySelectorAll('.pagination-dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === activeIndex);
+    });
+  };
+
+  const updateButtons = () => {
+    const maxScrollLeft = carouselContainer.scrollWidth - carouselContainer.clientWidth;
+    prevButton.disabled = carouselContainer.scrollLeft <= 0;
+    nextButton.disabled = carouselContainer.scrollLeft >= maxScrollLeft;
+  };
+
+  prevButton.addEventListener('click', () => {
+    carouselContainer.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+  });
+
+  nextButton.addEventListener('click', () => {
+    carouselContainer.scrollBy({ left: itemWidth, behavior: 'smooth' });
+  });
+
+  // Scroll event to update active dot and buttons
+  carouselContainer.addEventListener('scroll', () => {
+    const currentIndex = Math.round(carouselContainer.scrollLeft / itemWidth);
+    updateDots(currentIndex);
+    updateButtons();
+  });
+
+  // Drag to slide functionality
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carouselContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - carouselContainer.offsetLeft;
+    scrollLeft = carouselContainer.scrollLeft;
+    carouselContainer.classList.add('active');
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    carouselContainer.classList.remove('active');
+  });
+
+  carouselContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    carouselContainer.classList.remove('active');
+  });
+
+  carouselContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carouselContainer.offsetLeft;
+    const walk = (x - startX);
+    carouselContainer.scrollLeft = scrollLeft - walk;
+  });
+
+  // Initialize buttons state
+  updateButtons();
+});
+</script>

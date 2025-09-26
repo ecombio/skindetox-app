@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".breadcrumbs .bls__breadcrumb-list {color: rgb(var(--base-color)); display: none;}",
+        "h1 {display: none;}",
+        "@media (min-width: 1200px) {.container {max-width: 100%; }}",
+        " {margin-top: -30px; margin-bottom: -30px;}",
+        "@media (min-width: 1024px) {.strecth-width, .container-fluid, .container {--bs-gutter-x: 0rem; }}",
+        ".strecth-width,.container-fluid,.container {margin-left: auto; margin-right: auto; padding-right: 0; padding-left: 0; width: 100%;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

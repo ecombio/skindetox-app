@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ 'account.css' | asset_url }}">
+
+<div class="account-container">
+  <div class="container">
+    {% render 'sign-in' %}
+    {% render 'sign-up' %}
+  </div>
+</div>
+
+<script>
+  function openSignUp() {
+    document.getElementById('sign-in').style.display = "none";
+    document.getElementById('sign-up').style.display = "block";
+  }
+
+  function openSignIn() {
+    document.getElementById('sign-up').style.display = "none";
+    document.getElementById('sign-in').style.display = "block";
+  }
+</script>

@@ -1,0 +1,61 @@
+<section class="product-description">
+  <div class="product-description__wrapper">
+    <div class="product-description__left">
+      <h2>Details & Care</h2>
+      {{ product.description }}
+      {% render 'shipping-handling' %}
+    </div>
+    <div class="product-description__right">
+      {% render 'service-based' %}
+      <h2>{{ product.metafields.custom.brand.value.name | metafield_tag }}</h2>
+      <p>{{ product.metafields.custom.brand.value.description | metafield_tag }}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-description {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .product-description__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  /* Desktop styles */
+  .product-description__left, .product-description__right {
+    flex: 1;
+    min-width: 300px;
+    border: solid 1px #f0f0f0;
+    border-radius: 30px;
+    padding: 30px;
+  }
+  
+  /* Styles for tablets */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .product-description__wrapper {
+      flex-direction: row;
+    }
+    .product-description__left, .product-description__right {
+      flex: 1 1 45%;
+    }
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .product-description__wrapper {
+      flex-direction: column;
+    }
+    .product-description__left, .product-description__right {
+      flex: 100%;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+    .product-description__right {
+      margin-bottom: 0;
+    }
+  }
+</style>

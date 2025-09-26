@@ -1,0 +1,62 @@
+<div class="width">
+  <div class="specs-table">
+    {% for block in section.blocks %}
+      <div class="specs-table-row">
+        <h2>{{ block.settings.label }}</h2>
+        <p>{{ block.settings.value }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .specs-table {
+    padding: 60px 0;
+  }
+
+  .specs-table-row {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  .specs-table-row h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .specs-table-row span {
+    font-size: 18px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Specs blocks",
+  "blocks": [
+    {
+      "type": "specs_row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Specs blocks"
+    }
+  ]
+}
+{% endschema %}

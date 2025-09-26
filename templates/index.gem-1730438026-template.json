@@ -1,0 +1,608 @@
+{
+  "sections": {
+    "e7f8d580-b9df-4f1d-a91a-52fff5161a83": {
+      "type": "spacing",
+      "settings": {
+        "spacing_desktop": 30,
+        "spacing_moible": 30
+      }
+    },
+    "0c521c75-5d82-4dd6-aecc-f519d8907411": {
+      "type": "slideshow",
+      "blocks": {
+        "4d89f9ff-8153-4b4a-a089-ccb19f702450": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/digit1-slide.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/digital1-mb.jpg",
+            "content_box": "content_in_container_fluid",
+            "content_custom_width": false,
+            "content_width": 100,
+            "content_background_color": "",
+            "content_opacity": 100,
+            "horizontal_position": "left_position",
+            "vertical_position": "middle_position",
+            "slider_effect": "effect_fadeinleft",
+            "text_alignment": "left",
+            "text_alignment_on_mobile": "center",
+            "subheading": "",
+            "title": "Speaker<br>\nBluetooth SoundCore",
+            "description": "<p>Limited Time: Online Only!<\/p>",
+            "image_link": "shopify:\/\/collections\/macbook-pcs",
+            "button_text": "Shop Now",
+            "button_type": "primary"
+          }
+        },
+        "template--16567751082231__0c521c75-5d82-4dd6-aecc-f519d8907411-1666406556d8612fa9-0": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h13-slide2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/digital3-mb.jpg",
+            "content_box": "content_in_container_fluid",
+            "content_custom_width": false,
+            "content_width": 100,
+            "content_background_color": "",
+            "content_opacity": 100,
+            "horizontal_position": "left_position",
+            "vertical_position": "middle_position",
+            "slider_effect": "effect_fadeindown",
+            "text_alignment": "left",
+            "text_alignment_on_mobile": "center",
+            "subheading": "",
+            "title": "Top Offer<br>\nCamera Smart GP5",
+            "description": "<p>Limited Time: Online Only!<\/p>",
+            "image_link": "shopify:\/\/collections\/heatsink-pc",
+            "button_text": "Shop now",
+            "button_type": "primary"
+          }
+        },
+        "template--16567751082231__0c521c75-5d82-4dd6-aecc-f519d8907411-1666406556d8612fa9-1": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h13-slide3.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/digital-2mb.jpg",
+            "content_box": "content_in_container_fluid",
+            "content_custom_width": false,
+            "content_width": 100,
+            "content_background_color": "",
+            "content_opacity": 100,
+            "horizontal_position": "left_position",
+            "vertical_position": "middle_position",
+            "slider_effect": "effect_fadeindown",
+            "text_alignment": "left",
+            "text_alignment_on_mobile": "center",
+            "subheading": "",
+            "title": "Super Laptop<br>\nUp To 96GB Memory",
+            "description": "<p>Limited Time: Online Only!<\/p>",
+            "image_link": "shopify:\/\/collections\/gamepad-console",
+            "button_text": "Shop Now",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "4d89f9ff-8153-4b4a-a089-ccb19f702450",
+        "template--16567751082231__0c521c75-5d82-4dd6-aecc-f519d8907411-1666406556d8612fa9-0",
+        "template--16567751082231__0c521c75-5d82-4dd6-aecc-f519d8907411-1666406556d8612fa9-1"
+      ],
+      "custom_css": [
+        ".bls__slideshow.radius .slide-items {--base-border-radius: 20px;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "slide_height": "custom-height",
+        "color_scheme": "scheme-b808185a-cae7-47ba-9fe9-7d81ddf7e485",
+        "image_behavior": "none",
+        "eb_vertical_menu": false,
+        "height_dk": 450,
+        "height_tb": 450,
+        "height_mb": 450,
+        "heading_font_size": "40",
+        "heading_font_weight": "600",
+        "subheading_font_size": "14",
+        "subheading_font_weight": "500",
+        "description_font_size": "16",
+        "description_font_weight": "500",
+        "design": "s-text-overlay-image",
+        "reset_color_mb": false,
+        "show_arrow_desktop": true,
+        "show_arrow_mobile": false,
+        "show_bullet_desktop": true,
+        "show_bullet_mobile": true,
+        "autoplay": true,
+        "autorotate_speed": 6,
+        "enable_effect": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "48263d1a-f37b-4715-893a-ac5dfd296a1a": {
+      "type": "collection-list",
+      "blocks": {
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-0": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "macbook-pcs"
+          }
+        },
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-1": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "oled-smart-tvs",
+            "image": "shopify:\/\/shop_images\/h13-cate2.png"
+          }
+        },
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-2": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "phone-mobile",
+            "image": "shopify:\/\/shop_images\/h13-cate3.png"
+          }
+        },
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-3": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "tablets-ipad-pro",
+            "image": "shopify:\/\/shop_images\/h13-cate4.png"
+          }
+        },
+        "42f26074-bbd8-4c48-9280-589c65e24d73": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "gamepad-console",
+            "image": "shopify:\/\/shop_images\/h13-cate5.png"
+          }
+        },
+        "d96f25c4-5cc8-43f2-bfe6-de5e297695b8": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "camera-photo",
+            "image": "shopify:\/\/shop_images\/h13-cate6.png"
+          }
+        },
+        "1dc363d8-fa59-465f-b83b-f172afed1f26": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "heatsink-pc",
+            "image": "shopify:\/\/shop_images\/h13-cate7.png"
+          }
+        },
+        "ba532b50-1141-49eb-95db-68b50fa16fd0": {
+          "type": "collection_item",
+          "settings": {
+            "title_collection": "",
+            "collection": "home-electronics",
+            "image": "shopify:\/\/shop_images\/h13-cate8.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-0",
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-1",
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-2",
+        "template--16567751082231__48263d1a-f37b-4715-893a-ac5dfd296a1a-1666406556386d69e7-3",
+        "42f26074-bbd8-4c48-9280-589c65e24d73",
+        "d96f25c4-5cc8-43f2-bfe6-de5e297695b8",
+        "1dc363d8-fa59-465f-b83b-f172afed1f26",
+        "ba532b50-1141-49eb-95db-68b50fa16fd0"
+      ],
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "",
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "design_layout": "carousel",
+        "design_collection": "design-2",
+        "hover_effect": "zoom",
+        "show_count_product": true,
+        "custom_width_images": true,
+        "width_image": 120,
+        "images_style": true,
+        "image_ratio": "1\/1",
+        "custom_ratio": "476:450",
+        "custom_column": 8,
+        "column_gap": 5,
+        "collection_font_size": 14,
+        "collection_font_weight": 500,
+        "collection_spacing": 0,
+        "count_font_size": 13,
+        "count_font_weight": 400,
+        "autoplay": false,
+        "loop": false,
+        "show_arrow": false,
+        "carousel_pagination": "carousel_none",
+        "reveal_on_scroll": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "c1fdb0ad-db54-433c-b92b-3c7ffe1b276b": {
+      "type": "products-carousel",
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "Top Trending This Week",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "collection": "recommended-digitals",
+        "limit_products": 8,
+        "item_desktop": 6,
+        "column_gap": 30,
+        "item_mobile": false,
+        "carousel_autoplay": false,
+        "carousel_loop": false,
+        "carousel_arrows": false,
+        "carousel_pagination": "carousel_none",
+        "reveal_on_scroll": false,
+        "view_all_enable": true,
+        "text_view_all": "View All",
+        "enable_banner": false,
+        "banner_type": "image",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "banner_position": "position-left",
+        "banner_link": "",
+        "banner_width": 30,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "1cd2b5f2-fadd-4ff0-acc8-c70a1d64767f": {
+      "type": "banner-image",
+      "blocks": {
+        "template--18508174426409__1cd2b5f2-fadd-4ff0-acc8-c70a1d64767f-16808357223325d382-1": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "6",
+            "banner_type": "image",
+            "image": "shopify:\/\/shop_images\/h13-banner1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/h13-mb-banner1.jpg",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "link": "shopify:\/\/collections\/phone-mobile",
+            "open_link": "_blank",
+            "subtext": "Super Sale<br>\nCellphone Ultra. Save $199.00",
+            "title": "",
+            "content": "",
+            "btn_content": "Shop Cellphone",
+            "button_type": "link"
+          }
+        },
+        "template--18508174426409__1cd2b5f2-fadd-4ff0-acc8-c70a1d64767f-16808357223325d382-0": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "6",
+            "banner_type": "image",
+            "image": "shopify:\/\/shop_images\/h13-banner2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/h13-mb-banner2.jpg",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "link": "shopify:\/\/collections\/gamepad-console",
+            "open_link": "_blank",
+            "subtext": "Deals Good<br>\nHeadphone Bluetooth 5.0",
+            "title": "",
+            "content": "",
+            "btn_content": "Shop Headphone",
+            "button_type": "link"
+          }
+        }
+      },
+      "block_order": [
+        "template--18508174426409__1cd2b5f2-fadd-4ff0-acc8-c70a1d64767f-16808357223325d382-1",
+        "template--18508174426409__1cd2b5f2-fadd-4ff0-acc8-c70a1d64767f-16808357223325d382-0"
+      ],
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "",
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "column_gap": 30,
+        "layout_on_mobile": false,
+        "design_banner": "text-overlay-image",
+        "design_content": "default",
+        "text_align": "text-left",
+        "hover_effect": "zoom",
+        "h_font_size": 36,
+        "h_font_weight": "default",
+        "h_spacing": 10,
+        "sub_font_size": 20,
+        "sub_font_weight": "600",
+        "sub_spacing": 10,
+        "des_font_size": 16,
+        "des_font_weight": "default",
+        "des_spacing": 30,
+        "image_behavior": "none",
+        "text_position": "center",
+        "content_on_mobile": false,
+        "reset_color_mb": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "d788ac50-fafe-40fd-b184-c03e6d524680": {
+      "type": "products-grid",
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "Top Selling Products",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "collection": "top-selling-digital",
+        "limit_products": 8,
+        "item_desktop": 4,
+        "column_gap": 30,
+        "enable_banner": true,
+        "enable_sticky_banner": false,
+        "banner_type": "image",
+        "banner_img": "shopify:\/\/shop_images\/h13-banner3.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "banner_position": "position-left",
+        "banner_link": "shopify:\/\/collections\/top-deals-digitals",
+        "banner_width": 34,
+        "text_content": "<p><\/p>",
+        "view_all_enable": true,
+        "text_view_all": "View All",
+        "load_more_button_enable": false,
+        "number_of_rows": 2,
+        "button_action": "load",
+        "button_label": "Load more",
+        "button_type": "primary",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "5727c44b-73b9-41f4-8157-2e2f82c0f9f8": {
+      "type": "products-carousel",
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "Bestseller Product",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "collection": "top-deals-digitals",
+        "limit_products": 8,
+        "item_desktop": 6,
+        "column_gap": 30,
+        "item_mobile": false,
+        "carousel_autoplay": false,
+        "carousel_loop": false,
+        "carousel_arrows": false,
+        "carousel_pagination": "carousel_none",
+        "reveal_on_scroll": false,
+        "view_all_enable": true,
+        "text_view_all": "View All",
+        "enable_banner": false,
+        "banner_type": "image",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "banner_position": "position-left",
+        "banner_link": "",
+        "banner_width": 30,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "ed1c661f-a07f-493d-b805-859f35f9edc0": {
+      "type": "banner-image",
+      "blocks": {
+        "template--18508174426409__ed1c661f-a07f-493d-b805-859f35f9edc0-168084287565270e69-0": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "4",
+            "banner_type": "image",
+            "image": "shopify:\/\/shop_images\/4_e1.jpg",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "link": "shopify:\/\/collections\/camera-photo",
+            "open_link": "_blank",
+            "subtext": "",
+            "title": "Cyber Monday - Save $599 On Speaker",
+            "content": "<p>Save 50% on order more than $99. Delivery in 1 days. Apply for the first 1k Customers.<\/p>",
+            "btn_content": "",
+            "button_type": "primary"
+          }
+        },
+        "template--18508174426409__ed1c661f-a07f-493d-b805-859f35f9edc0-168084287565270e69-1": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "4",
+            "banner_type": "image",
+            "image": "shopify:\/\/shop_images\/5_e1.jpg",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "link": "shopify:\/\/collections\/macbook-pcs",
+            "open_link": "_blank",
+            "subtext": "",
+            "title": "Sale Off Unlimited - Buy 1 Get 2",
+            "content": "<p>Save 80% on order more than $599. Delivery in 1 days. Apply for the first 1k Customers.<\/p>",
+            "btn_content": "",
+            "button_type": "primary"
+          }
+        },
+        "fda29d14-dcf0-4839-b583-bb1d97bb00e1": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "4",
+            "banner_type": "image",
+            "image": "shopify:\/\/shop_images\/6_e1.jpg",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "link": "shopify:\/\/collections\/gamepad-console",
+            "open_link": "_blank",
+            "subtext": "",
+            "title": "Hurry Up - Smartphone Only $299",
+            "content": "<p>All smartphone products at the same price $299. Delivery in 1 days. Apply for the first 1k Customers.<\/p>",
+            "btn_content": "",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "template--18508174426409__ed1c661f-a07f-493d-b805-859f35f9edc0-168084287565270e69-0",
+        "template--18508174426409__ed1c661f-a07f-493d-b805-859f35f9edc0-168084287565270e69-1",
+        "fda29d14-dcf0-4839-b583-bb1d97bb00e1"
+      ],
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "Deals & Promotions",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "column_gap": 30,
+        "layout_on_mobile": false,
+        "design_banner": "text-below-image",
+        "design_content": "default",
+        "text_align": "text-left",
+        "hover_effect": "zoom",
+        "h_font_size": 16,
+        "h_font_weight": "600",
+        "h_spacing": 10,
+        "sub_font_size": 18,
+        "sub_font_weight": "default",
+        "sub_spacing": 10,
+        "des_font_size": 14,
+        "des_font_weight": "default",
+        "des_spacing": 0,
+        "image_behavior": "none",
+        "text_position": "top",
+        "content_on_mobile": false,
+        "reset_color_mb": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "30c7af88-821e-458e-b0b2-60d4e544b18c": {
+      "type": "divider",
+      "settings": {
+        "container": "full-width",
+        "border_height": 1,
+        "border_color": "#e5e8ec",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": true
+      }
+    },
+    "a33b07e7-4bfe-49be-b75c-f5ca36b7975d": {
+      "type": "icon-box",
+      "blocks": {
+        "template--18508174426409__a33b07e7-4bfe-49be-b75c-f5ca36b7975d-168083976278c0a293-0": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/cms1_e1.png",
+            "heading": "Fast Delivery",
+            "description": "<p>Deliver in 24 hours max!<\/p>"
+          }
+        },
+        "template--18508174426409__a33b07e7-4bfe-49be-b75c-f5ca36b7975d-168083976278c0a293-1": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/cms2_e1.png",
+            "heading": "Safe Payment",
+            "description": "<p>Visa, Mastercard, PayPal...<\/p>"
+          }
+        },
+        "template--18508174426409__a33b07e7-4bfe-49be-b75c-f5ca36b7975d-168083976278c0a293-2": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/cms3_e1.png",
+            "heading": "Free Returns",
+            "description": "<p>Free returns within 15 days<\/p>"
+          }
+        },
+        "9725192a-3b8b-4716-b494-2cdedb2128da": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/cms4_e1.png",
+            "heading": "Help Center",
+            "description": "<p>Dedicated 24\/7 support<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18508174426409__a33b07e7-4bfe-49be-b75c-f5ca36b7975d-168083976278c0a293-0",
+        "template--18508174426409__a33b07e7-4bfe-49be-b75c-f5ca36b7975d-168083976278c0a293-1",
+        "template--18508174426409__a33b07e7-4bfe-49be-b75c-f5ca36b7975d-168083976278c0a293-2",
+        "9725192a-3b8b-4716-b494-2cdedb2128da"
+      ],
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "",
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container-fluid",
+        "custom_column": 4,
+        "column_gap": 30,
+        "color_scheme": "",
+        "icon_width": 30,
+        "icon_spacing": 10,
+        "ib_h_font_size": 15,
+        "ib_h_font_weight": "500",
+        "ib_spacing": 5,
+        "ib_desc_font_size": 14,
+        "ib_img_view": "default",
+        "img_position": "position-top",
+        "content_text_alignment": "text-center",
+        "padding_top": 30,
+        "padding_bottom": 10,
+        "reset_spacing": true
+      }
+    },
+    "08877496-16c6-4621-94ca-b372ea143f40": {
+      "type": "divider",
+      "settings": {
+        "container": "full-width",
+        "border_height": 1,
+        "border_color": "#e5e8ec",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": true
+      }
+    },
+    "ff885f24-6501-4f1d-a21e-4e89407ceb42": {
+      "type": "subscribe-form",
+      "settings": {
+        "heading_logo_svg": "",
+        "heading": "Sign Up to Newsletter",
+        "description": "<p>Enter your email address to get $10 off your first order and free shipping.<\/p><p>Updates information on Sales and Offers.<\/p>",
+        "text_alignment": "text-center",
+        "container": "container-fluid",
+        "color_scheme": "scheme-013ccfbf-beb5-42e6-bc8f-8a36ab634ca7",
+        "email_placeholder": "Your email address...",
+        "btn_text": "Subscribe",
+        "form_layout": "vertical",
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    }
+  },
+  "order": [
+    "e7f8d580-b9df-4f1d-a91a-52fff5161a83",
+    "0c521c75-5d82-4dd6-aecc-f519d8907411",
+    "48263d1a-f37b-4715-893a-ac5dfd296a1a",
+    "c1fdb0ad-db54-433c-b92b-3c7ffe1b276b",
+    "1cd2b5f2-fadd-4ff0-acc8-c70a1d64767f",
+    "d788ac50-fafe-40fd-b184-c03e6d524680",
+    "5727c44b-73b9-41f4-8157-2e2f82c0f9f8",
+    "ed1c661f-a07f-493d-b805-859f35f9edc0",
+    "30c7af88-821e-458e-b0b2-60d4e544b18c",
+    "a33b07e7-4bfe-49be-b75c-f5ca36b7975d",
+    "08877496-16c6-4621-94ca-b372ea143f40",
+    "ff885f24-6501-4f1d-a21e-4e89407ceb42"
+  ]
+}

@@ -1,0 +1,26 @@
+{% schema %}
+{
+  "name": "Collection Card",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Collection Pages"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="collection-card" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px;">
+  <div style="display: flex; align-items: center;">
+    <div style="margin-right: 10px;">
+      <a href="{{ collection.url }}">
+        <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}" style="border-radius: 50%; width: 50px; height: 50px;">
+      </a>
+    </div>
+    <div style="flex: 1; color: #fff;">
+      <a href="{{ collection.url }}" style="color: #fff;">{{ collection.title }}</a>
+      <p>{{ collection.description }}</p>
+    </div>
+  </div>
+</div>

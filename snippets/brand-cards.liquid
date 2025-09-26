@@ -1,0 +1,24 @@
+<div class="card">
+    <img src="{{ logo | image_url }}" alt="{{ logo.alt }}">
+    <h2 class="h5">{{ name | metafield_tag }}</h2> 
+    <div class="rating">
+        {{ iratings.value }}
+        {% for i in (1..iratings) %}
+            <span class="star">&#9733;</span>
+        {% endfor %}
+    </div>
+    <p class="description">{{ description | metafield_tag }}</p>
+    <div class="social">
+        <a href="{{ website_url }}" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+    </div>
+</div>
+/* in-progress */
+  {% for brand in shop.metaobjects.brand.values %}
+    {% render 'brand',
+      name: brand.name,
+      description: brand.description,
+    %}
+    {% if forloop.index == 1 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}

@@ -1,0 +1,63 @@
+{% comment %}
+  Highlights Snippet
+{% endcomment %}
+
+<div class="container">
+  <div class="highlights">
+    <h3>Product Highlights</h3>
+    <ul>
+      {% for highlight in product.highlights %}
+        <li class="highlight-item">
+          <div class="highlight-svg">
+            {{ highlight.svg | raw }}
+          </div>
+          <div class="highlight-text">
+            <h4>{{ highlight.title }}</h4>
+            <p>{{ highlight.description }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .highlights {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+  }
+  .highlights h3 {
+    margin-top: 0;
+  }
+  .highlights ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .highlight-svg {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+  }
+  .highlight-text {
+    flex: 1;
+  }
+  .highlight-text h4 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  .highlight-text p {
+    margin: 5px 0 0;
+  }
+</style>

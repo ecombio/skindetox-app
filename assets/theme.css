@@ -1,0 +1,80 @@
+/* General styling for the top bar */
+.topbar {
+  background-color: #f8f9fa; /* Light background color */
+  border-bottom: 1px solid #e0e0e0; /* Subtle border */
+  height: 40px; /* Fixed height for the top bar */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  font-size: 14px;
+  color: #333; /* Default text color */
+  padding: 0 15px; /* Horizontal padding */
+}
+
+.topbar .topbar__section-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure it spans the full width */
+}
+
+/* Styling for the links in the top bar */
+.topbar .topbar-link {
+  color: #0078d7; /* Default link color */
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.topbar .topbar-link:hover {
+  color: #000; /* Black color on hover */
+}
+
+.topbar .topbar-link:last-child {
+  margin-right: 0; /* Remove margin after the last link */
+}
+
+/* Message section styling */
+.topbar .topbar-message {
+  font-weight: 500;
+  color: #555; /* Message text color */
+  padding: 0 10px;
+}
+
+/* Divider between links */
+.topbar .col-right a:not(:last-child)::after {
+  content: "|";
+  color: #ccc; /* Divider color */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .topbar {
+    font-size: 12px; /* Smaller text for smaller screens */
+    height: auto; /* Allow height to adjust for stacked content */
+    padding: 8px 10px;
+  }
+
+  .topbar .topbar__section-inner {
+    flex-direction: column; /* Stack elements on mobile */
+    align-items: flex-start;
+  }
+
+  .topbar .topbar-link {
+    margin-right: 0;
+    margin-bottom: 8px; /* Space between links on mobile */
+  }
+
+  .topbar .topbar-message {
+    margin-bottom: 8px;
+  }
+}
+
+/* Remove unnecessary right margins in col-left and col-right */
+.topbar .col-left > *:not(:last-child),
+.topbar .col-right > *:not(:last-child) {
+  margin-right: 0;
+}
+

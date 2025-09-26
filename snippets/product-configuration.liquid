@@ -1,0 +1,34 @@
+<!-- Snippet: product-configuration.liquid -->
+<div id="product-configuration" style="position: relative; z-index: 100;">
+  <!-- First Component: Technical Specifications Button -->
+  <div class="toggle-button" data-target="technical-specs-sidebar" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; cursor: pointer; transition: background-color 0.3s ease; font-weight: bold; border-bottom: 1px solid #f0f0f0;">
+    <h5 style="margin-bottom: 0">Technical Specifications</h5>
+    <h5 style="margin-bottom: 0">&#62;</h5>
+  </div>
+  <!-- Render Technical Specifications Sidebar -->
+  {% render 'technical-specifications' %}
+  
+  <!-- Second Component: Perks & Benefits Included Button -->
+  <div class="toggle-button" data-target="perks-benefits-sidebar" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; cursor: pointer; transition: background-color 0.3s ease; font-weight: bold; border-bottom: 1px solid #f0f0f0;">
+    <h5 style="margin-bottom: 0">Perks & Benefits Included</h5>
+    <h5 style="margin-bottom: 0">&#62;</h5>
+  </div>
+  <!-- Render Perks & Benefits Included Sidebar -->
+  {% render 'perks-benefits-included' %}
+  <!-- Third Component: Frequently Asked Questions Button -->
+  <div class="toggle-button" data-target="faq-sidebar" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; cursor: pointer; transition: background-color 0.3s ease; font-weight: bold; border-bottom: 0px solid #f0f0f0;">
+    <h5 style="margin-bottom: 0">Frequently Asked Questions</h5>
+    <h5 style="margin-bottom: 0">&#62;</h5>
+  </div>
+  <!-- Render Frequently Asked Questions Sidebar -->
+  {% render 'frequently-asked-questions' %}
+</div>
+<!-- Hover and Active Effects -->
+<style>
+  .toggle-button:hover {
+    background-color: #f8fafd;
+  }
+  .toggle-button:active {
+    background-color: #f8fafd;
+  }
+</style>

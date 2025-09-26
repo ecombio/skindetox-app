@@ -1,0 +1,76 @@
+{% schema %}
+{
+  "name": "Collection Profile",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "reset_spacing",
+      "label": "Reset Spacing",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Enter the title of the collection."
+        },
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Collection Pages",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="collection-profile" style="padding: {{ settings.padding_top }}px {{ settings.padding_bottom }}px;">
+  {% for block in section.blocks %}
+    <div class="collection-item">
+      <h2>{{ block.settings.title }}</h2>
+      <p>{{ block.settings.description }}</p>
+      <a href="{{ block.settings.collection.url }}">
+        <img src="{{ block.settings.collection.image | img_url: 'medium' }}" alt="{{ block.settings.collection.title }}">
+      </a>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,84 @@
+<div class="width">
+  <div class="specs-table">
+    <div class="specs-table-row">
+      <h2>{{ section.settings.row1label }}</h2>
+      <p>{{ section.settings.row1value }}</p>
+    </div>
+
+    <div class="specs-table-row">
+      <h2>{{ section.settings.row2label }}</h2>
+      <p>{{ section.settings.row2value }}</p>
+    </div>
+
+    <div class="specs-table-row">
+      <h2>{{ section.settings.row3label }}</h2>
+      <p>{{ section.settings.row3value }}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .specs-table {
+    padding: 60px 0;
+  }
+
+  .specs-table-row {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  .specs-table-row h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .specs-table-row span {
+    font-size: 18px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Specs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "row1label",
+      "label": "Row #1 label"
+    },
+    {
+      "type": "text",
+      "id": "row1value",
+      "label": "Row #1 value"
+    },
+    {
+      "type": "text",
+      "id": "row2label",
+      "label": "Row #2 label"
+    },
+    {
+      "type": "text",
+      "id": "row2value",
+      "label": "Row #2 value"
+    },
+    {
+      "type": "text",
+      "id": "row3label",
+      "label": "Row #3 label"
+    },
+    {
+      "type": "text",
+      "id": "row3value",
+      "label": "Row #3 value"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Specs"
+    }
+  ]
+}
+{% endschema %}

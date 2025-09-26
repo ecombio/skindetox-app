@@ -1,0 +1,29 @@
+{% comment %}
+  This snippet displays an image with rounded bottom corners and adjusts height for different screen sizes.
+{% endcomment %}
+<style>
+  .collection-cover {
+    height: 200px;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+  }
+  .collection-cover img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 767px) {
+    .collection-cover {
+      height: 140px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .collection-cover {
+      height: 180px;
+    }
+  }
+</style>
+<div class="collection-cover">
+  <img src="{{ collection.metafields.cover.image | image_url }}" alt="{{ collection.metafields.cover.image.alt }}">
+</div>

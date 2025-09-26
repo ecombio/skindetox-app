@@ -1,0 +1,102 @@
+<div class="product-faq">
+  <!-- FAQ 1 -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+How do I place an order?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+To place an order on <a href="http://www.MoneyMovesApparel.com">MoneyMovesApparel.com</a>, browse products, add to cart, and checkout securely. Get order updates via email for a smooth shopping experience!
+    </div>
+  </div>
+
+  <!-- FAQ 2 -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      What payment methods are available?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+We accept Visa, MasterCard, Discover, and American Express. You can also pay using PayPal or Affirm, if available. We do not accept bank transfers, checks, or cash.    </div>
+  </div>
+
+  <!-- FAQ 3 -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      What are your shipping methods?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+We process orders within 24-48 hours and ship within a few days! Enjoy fast delivery with Economy (4-6 days) or Express (3-4 days)—and we cover the shipping fees on all orders.</div>
+  </div>
+
+  <!-- FAQ 4 -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+What is your return policy?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+We offer a 30-day return policy for unused, unworn items in original packaging with proof of purchase. Contact <a href="mailto:support@moneymovesapparel.com">support@moneymovesapparel.com</a> to start a return. If approved, we’ll provide a return label and instructions. Returns sent without prior approval won’t be accepted. Damaged or incorrect items must be reported immediately. Some items, like custom or sale items, are non-returnable. EU customers have a 14-day cooling-off period. Refunds process within 10 business days after approval.    </div>
+  </div>
+
+<style>
+  .product-faq {
+    font-family: Arial, sans-serif;
+  }
+
+  .faq-item {
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  /* Remove border-bottom for the last FAQ item */
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 15px; /* Added padding for visual enhancement */
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    border-radius: 5px; /* Rounded corners for a modern touch */
+  }
+
+  .faq-question:hover {
+    background-color: #f8fafd; /* Subtle hover effect */
+  }
+
+  .faq-icon {
+    margin-left: 10px;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-answer {
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+    padding-left: 15px; /* Indented answer for better separation */
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+</style>
+
+<script>
+  function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    faqItem.classList.toggle("active");
+  }
+</script>

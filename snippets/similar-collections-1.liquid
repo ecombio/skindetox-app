@@ -1,0 +1,176 @@
+<div class="carousel-container">
+  <button class="carousel-button prev" disabled>Prev</button>
+  <div class="carousel">
+    {%- for collection_item in collections -%}
+    <div class="carousel-item">
+      <div class="collection-item relative">
+        <div class="bls__collection-infor text-center">
+          <h3 class="bls__collection-title m-0 d-inline-block padded-title">
+            <a href="{{ collection_item.url }}" class="d-block text-transform">
+              {{ collection_item.title | escape }}
+            </a>
+          </h3>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+  <button class="carousel-button next">Next</button>
+</div>
+
+<style>
+.carousel-container {
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling */
+  width: 100%;
+  position: relative;
+  margin: 0 auto; /* Center the container */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.carousel {
+  display: inline-flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+  cursor: grab; /* Change cursor to indicate draggable */
+}
+
+.carousel:active {
+  cursor: grabbing; /* Change cursor when dragging */
+}
+
+.carousel-item {
+  display: inline-block;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.carousel-item:first-child .padded-title {
+  padding-left: 0; /* Disable left padding for the first item's title */
+}
+
+.carousel-item:last-child .padded-title {
+  padding-right: 0; /* Disable right padding for the last item's title */
+}
+
+.bls__collection-title {
+  display: inline-block; /* Ensure the title fits the content */
+}
+
+.text-center {
+  text-align: start; /* Align text to the start */
+}
+
+.padded-title {
+  padding: 10px 15px; /* Padding top/bottom 10px, left/right 15px */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-button:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let carouselContainer = document.querySelector('.carousel-container');
+  let carousel = document.querySelector('.carousel');
+  let items = document.querySelectorAll('.carousel-item');
+  let prevButton = document.querySelector('.prev');
+  let nextButton = document.querySelector('.next');
+  let currentIndex = 0;
+  let itemWidth = items[0].offsetWidth + 15; // Including margin
+
+  function updateCarousel() {
+    let newTransform = `translateX(-${currentIndex * itemWidth}px)`;
+    carousel.style.transform = newTransform;
+
+    // Disable or enable buttons
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === items.length - 1;
+  }
+
+  function checkButtons() {
+    prevButton.disabled = carouselContainer.scrollLeft <= 0;
+    nextButton.disabled = carouselContainer.scrollLeft + carouselContainer.clientWidth >= carouselContainer.scrollWidth;
+  }
+
+  prevButton.addEventListener('click', function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+      checkButtons();
+    }
+  });
+
+  nextButton.addEventListener('click', function() {
+    if (currentIndex < items.length - 1) {
+      currentIndex++;
+      updateCarousel();
+      checkButtons();
+    }
+  });
+
+  // Drag to slide functionality
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carouselContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    carouselContainer.classList.add('active');
+    startX = e.pageX - carouselContainer.offsetLeft;
+    scrollLeft = carouselContainer.scrollLeft;
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    carouselContainer.classList.remove('active');
+  });
+
+  carouselContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    carouselContainer.classList.remove('active');
+    checkButtons(); // Ensure buttons are correctly enabled/disabled after dragging
+  });
+
+  carouselContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carouselContainer.offsetLeft;
+    const walk = (x - startX) * 3; // Scroll faster
+    carouselContainer.scrollLeft = scrollLeft - walk;
+    checkButtons(); // Ensure buttons are correctly enabled/disabled during dragging
+  });
+
+  // Initialize buttons state
+  updateCarousel();
+});
+</script>

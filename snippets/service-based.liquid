@@ -1,0 +1,101 @@
+<div class="gift-options">
+  <h2>Gift Options</h2>
+
+  <div class="services-table">
+    <div class="services-row">
+      
+      <div class="pickup-options">
+        <h5>Free Pickup:</h5>
+        <ul>
+          <li>Printed gift message: Free</li>
+          <li>DIY Nordstrom gift box: Free</li>
+          <li>Nordstrom gift box: Free</li>
+          <li>Signature gift wrap: Free</li>
+        </ul>
+      </div>
+
+      <div class="delivery-options">
+        <h5>Delivery:</h5>
+        <ul>
+          <li>Email gift message: Free</li>
+          <li>Printed gift message: Free</li>
+          <li>DIY Nordstrom gift box: $3</li>
+          <li>Nordstrom gift box: $5</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="help-note">Need help finding the perfect gift? We’ve got you covered. <button>Shop Gifts</button></p>
+</div>
+
+<style>
+  .gift-options {
+    border: solid 1px #f0f0f0;
+    border-radius: 30px;
+    padding: 30px;
+    height: min-content;
+    width: auto;
+  }
+  .gift-options h2 {
+    font-size: clamp(2.4rem,4vw,var(--font-h2));
+  }
+  .services-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .services-row {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+  }
+  .pickup-options, .delivery-options {
+    border-radius: 8px;
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .pickup-options h2, .delivery-options h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .pickup-options ul, .delivery-options ul {
+    list-style: none;
+    padding: 0;
+  }
+  .pickup-options li, .delivery-options li {
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .help-note {
+    font-size: 1em;
+    margin-top: 20px;
+    display: grid;
+  }
+  .help-note button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 140px;
+    margin-top: 10px;
+  }
+  .help-note button:hover {
+    background-color: #000;
+  }
+
+  @media (max-width: 768px) {
+    .services-row {
+      flex-direction: column;
+    }
+    .pickup-options, .delivery-options {
+      width: 100%;
+    }
+  }
+</style>

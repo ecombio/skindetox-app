@@ -1,0 +1,55 @@
+<section class="product-description">
+  <div class="product-description__wrapper">
+    <div class="product-description__left">
+      {% render 'main-product-description' %}
+      {% render 'shipping-handling' %}
+    </div>
+    <div class="product-description__right">
+      {% render 'service-based' %}
+      {% render 'product-brand' %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-description {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .product-description__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  /* Desktop styles */
+  .product-description__left, .product-description__right {
+    display: grid;
+    gap: 30px;
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Styles for tablets */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .product-description__wrapper {
+      flex-direction: row;
+    }
+    .product-description__left, .product-description__right {
+      flex: 1 1 45%;
+    }
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .product-description__wrapper {
+      flex-direction: column;
+    }
+    .product-description__left, .product-description__right {
+      flex: 100%;
+      margin-bottom: 0px;
+      padding: 0px;
+    }
+  }
+</style>

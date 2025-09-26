@@ -1,0 +1,82 @@
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden; /* Ensure the wrapper hides overflow */
+  position: relative; /* Positioning context for buttons */
+}
+
+.carousel-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling */
+  width: 100%;
+  margin: 0 auto; /* Center the container */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.carousel {
+  display: inline-flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+  cursor: grab; /* Change cursor to indicate draggable */
+}
+
+.carousel:active {
+  cursor: grabbing; /* Change cursor when dragging */
+}
+
+.carousel-item {
+  display: inline-block;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.carousel-item:first-child .padded-title {
+  padding-left: 0; /* Disable left padding for the first item's title */
+}
+
+.carousel-item:last-child .padded-title {
+  padding-right: 0; /* Disable right padding for the last item's title */
+}
+
+.bls__collection-title {
+  display: inline-block; /* Ensure the title fits the content */
+}
+
+.text-center {
+  text-align: start; /* Align text to the start */
+}
+
+.padded-title {
+  padding: 10px 15px; /* Padding top/bottom 10px, left/right 15px */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-button:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}

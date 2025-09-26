@@ -1,0 +1,36 @@
+<style>
+  .spec-title {
+    margin-bottom: 0px;
+  }
+  .spec-table {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .spec-label {
+    flex: 1;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000;
+  }
+  .spec-value {
+    flex: 2;
+    font-size: 1.1em;
+    color: #000;
+  }
+</style>
+
+{% assign label = product.metafields.custom.label %}
+{% assign value = product.metafields.custom.value %}
+
+{% if label != blank or value != blank %}
+  <h2 class="spec-title">Specifications</h2>
+  <div class="spec-table">
+    {% if label != blank %}
+      <div class="spec-label">{{ label | metafield_tag }}</div>
+    {% endif %}
+    {% if value != blank %}
+      <div class="spec-value">{{ value | metafield_tag }}</div>
+    {% endif %}
+  </div>
+{% endif %}

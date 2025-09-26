@@ -1,0 +1,459 @@
+{% liquid
+  assign enable_rtl = settings.rtl
+  assign iso_code = request.locale.iso_code
+  assign lis_language_rtl = settings.language_rtl
+  if lis_language_rtl != blank
+    if lis_language_rtl contains iso_code
+      assign enable_rtl = true
+    else
+      assign enable_rtl = false
+    endif
+  endif
+%}
+
+<!doctype html>
+<html
+  class="no-js{% if enable_rtl %} body-rtl{% endif %} {% if settings.pre_load_page %}overflow-hidden{% endif %}"
+  lang="{{ iso_code }}"
+>
+  <head>
+	<!-- Added by AVADA SEO Suite -->
+	{% include 'avada-seo' %}
+	<!-- /Added by AVADA SEO Suite -->
+ {%- render 'ecom_header' -%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_mobile_browser }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    <meta name="description" content="{{ page_description | default: shop.description | default: shop.name | escape }}">
+    {% render 'meta-tags' %}
+    {{ content_for_header }}
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+    {%- render 'head-assets' -%}
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'easydlg.min.js' | asset_url }}" defer="defer"></script>
+    {{ shop.metafields.loox.global_html_head }}
+    {% if settings.pre_load_page %}
+      <style>
+        .preloader {
+          position: fixed;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          width: inherit;
+          height: inherit;
+          z-index: 99999999;
+          inset: 0;
+        }
+        .preloader-icon {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        .preloader-dot-loading {
+          background-image: url("{{ 'dots-loading.gif' | asset_url }}");
+          width: 35px;
+          height: 35px;
+        }
+        .preloader-infinity {
+          background-image: url("{{ 'infinity.gif' | asset_url }}");
+          width: 50px;
+          height: 50px;
+        }
+        .preloader-spin {
+          background-image: url("{{ 'spin.gif' | asset_url }}");
+          width: 30px;
+          height: 30px;
+        }
+        .preloader-spinner {
+          background-image: url("{{ 'spinner.gif' | asset_url }}");
+          width: 50px;
+          height: 50px;
+        }
+       
+      </style>
+      <script>
+        window.addEventListener('load', function () {
+          setTimeout(() => {
+            document.getElementById('preloader').style.display = 'none';
+            document.querySelector('html').classList.remove('overflow-hidden');
+          }, 500);
+        });
+      </script>
+    {% endif %}
+    <style>
+       .shopify-app-block:has(.Joy-Hero-Banner){
+              padding-top: 0px!important;
+        }
+    </style>
+
+<style>
+  /* Super high z-index for sidebar system */
+  #technical-specs-overlay, #perks-benefits-overlay, #faq-overlay {
+    z-index: 99999 !important;
+  }
+  
+  #technical-specs-sidebar, #perks-benefits-sidebar, #faq-sidebar {
+    z-index: 100000 !important;
+  }
+</style>
+    
+    <script id='merchantWidgetScript'
+            src="https://www.gstatic.com/shopping/merchant/merchantwidget.js"
+            defer>
+    </script>
+    <script type="text/javascript">
+      merchantWidgetScript.addEventListener('load', function () {
+        merchantwidget.start({
+         position: 'RIGHT_BOTTOM'
+       });
+      });
+    </script>
+</head>
+  <body class="gradient {% if template.name == 'collection' %}template-collection{% endif %}{% if template.name == 'product' %}template-product {% endif %}{% if template.name == 'index' %}template-index{% endif %} {%- if settings.general_layout == 'boxed' -%}box-layout{% elsif settings.general_layout == 'full_width' %}full-width-layout{% else %}{%- endif -%} {% if settings.content_center %}item-center{% endif %} {% if settings.image_style != blank %}product-images-style-radius{% endif %} {% if template.suffix contains 'layout-2' %}product-digital-layout-2{% endif %}">
+    <div class="bls-wrapper">
+      {% if settings.pre_load_page %}
+        <div class="preloader" id="preloader">
+          <div class="preloader-icon preloader-{{ settings.icon_preload }}"></div>
+        </div>
+      {% endif %}
+      {%- render 'umino-home' -%}
+      <div class="bls__overlay d-none-overlay"></div>
+
+<div class="header header--desktop d-none-mb" aria-hidden="false">
+  {% render 'header',
+    forced_layout: 'h_layout5',
+    id_suffix: '-desktop',
+    output_schema_json: true %}
+</div>
+
+<div class="header header--mobile d-none-desktop" aria-hidden="true">
+  {% render 'header',
+    forced_layout: 'h_layout7',
+    id_suffix: '-mobile',
+    output_schema_json: false %}
+</div>
+
+      {% section 'announcement' %}
+      <main
+        id="MainContent"
+        class="content-for-layout focus-none{% if template == 'product' or template == 'page.wishlist' or template == "page.recently-viewed-products" %} skeleton-product-detail{% endif %}"
+        role="main"
+        tabindex="-1"
+      >
+        {{ content_for_layout }}
+      </main>
+      {%- sections 'overlay-group' -%}
+      {%- render 'footer-layout' -%}
+      {%- section 'mobile-stickybar' -%}
+      {%- section 'custom-colors' -%}
+    </div>
+    {%- render 'fake-order' -%}
+    {%- render 'content-bottom' -%}
+    {%- render 'before-you-leave' -%}
+    {%- render 'scripts-tag' -%}
+    {%- if shop.domain == 'umino-demo.myshopify.com'
+      or shop.domain == 'demo-umino.myshopify.com'
+      or shop.domain == 'umino-demo-v2.myshopify.com'
+    -%}
+      <feature-button class="d-none extent-button-right-bar"></feature-button>
+    {%- endif -%}
+    
+    {{ shop.metafields.loox.global_html_body }}
+  
+    {%- render "ecom_footer"-%}
+
+<style>
+  @media only screen and (min-width: 1025px) {
+  .horizontal-list > .level0 {
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+  .bls__product-details {
+    padding: 1.5rem;
+    height: 140px;
+}
+  /*
+.cart-count {
+  display: {% if cart.item_count == 0 %}none{% else %}inline-flex{% endif %} !important;
+}
+*/
+  .biger-price .price {
+    font-size: 23px;
+}
+    @media (max-width: 1024px) {
+  body.has-url-match .footer {
+    padding-bottom: 70px;
+  }
+}
+@media (min-width: 991px) {
+    .bls__section.bls__product:not(.bls__section-list-products) .bls__swiper { 
+        padding: 10px;
+        margin: -10px;
+    }
+    .bls__product-banner {
+      /* padding: 10px; */ 
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .bls__section-header {
+      /*margin-bottom: 20px;*/
+  }
+}
+.threesixty .threesixty_images img {
+  display: none;
+}
+.template-index .bls__section .bls__section-header {
+  border-bottom: 0;
+}
+body {
+  padding: 0px;
+}
+.bls-drawer-bottom {
+  padding: 3rem;
+  padding-top: 1.5rem;
+}
+.bls-cart-summary {
+  padding: 2rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding-top: 3rem;
+}
+.cart__blocks .discounts,
+.bls-cart-discounts {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+  text-align: right;
+  font-size: 1.3rem;
+  display: none;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+.bls-drawer-bottom .viewcart {
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--btn-primary-bg);
+  display: none;
+}
+.form-group textarea,
+.form-group input {
+  background-color: #f8fafd;
+}
+@media (min-width: 991px) {
+  .bls__section .bls__swiper {
+    overflow: hidden;
+  }
+}
+.bls__banner-image .row.horizontal_scroll {
+  scrollbar-width: none;
+}
+.bls-cart-footer .bls__cart-addons {
+  display: none;
+}
+.bls__product-item {
+  height: auto;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background: white;
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+.bls__product-item:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow on hover */
+}
+.bls__product-img {
+  border-radius: 4px 4px 0px 0px;
+  display: block;
+}
+.bls__product-details {
+  padding: 1.5rem;
+}
+.swiper:not(.bls__product-gallery) .swiper-pagination-progressbar {
+  margin-top: var(--bls__section-header-margin);
+  display: none;
+}
+.product-compare-color {
+  display: none;
+}
+.product-information-buttons {
+  /*display: none;*/
+}
+.bls__product-addons {
+  padding-top: 10px;
+}
+  @media only screen and (min-width: 1600px) {
+    .bls__menu-parent:not(.default_dropdown) .submenu {
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+}
+      @media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    .bls__menu-parent:not(.default_dropdown) .submenu {
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+}
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .bls__menu-parent:not(.default_dropdown) .submenu {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
+      @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .bls__menu-parent:not(.default_dropdown) .submenu {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+  .submenu a, .subchildmenu a { 
+    font-weight: 600 
+  }
+</style>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const url = window.location.href;
+    if (url.includes('search') || url.includes('collections') || url.includes('products')) {
+        document.body.classList.add('has-url-match');
+    }
+});
+  
+  </script>
+
+
+    {% comment %}
+The following will be 'product-quickview' so customers can quickly buy 'deez-nutz',
+    make sure to add recommended products + suggestions + featured + relative products + frequently bought together without telling theme it's frequently bought together,
+    up-sell deez-nutz and cross-sell deez-nutz
+    
+    <style>
+.dlg-box {
+  display: block;
+  margin: 0;
+  padding: 0;
+ /*max-width: 1030px;*/
+    width: 58%;
+    height: 80%;
+  min-width: 100px;
+  border-radius: 5px;
+  /* minimum resize value */
+  min-height: 36px;
+  /* minimum resize value */
+  background: var(--base-body-bg-color);
+  background: var(--gradient-background);
+  /* ".dlg-heading" has the same background-color as this */
+  visibility: hidden;
+  overflow: hidden;
+  /* disable scrolling inside box, instead set scroll on inside elements */
+  position: absolute;
+  /* this is needed or else "dlg-disable-drag" custom position do not work */
+  pointer-events: auto;
+  /* makes dialog clickable when parent (overlay) is disabled */
+}
+    .absolute-lg {
+        /*position: absolute;*/
+    }
+}
+    .dlg-message {
+    cursor: initial;
+    /* justify-content: center; */
+    justify-self: center;
+}
+    </style>
+    
+    {% endcomment %}
+<style>
+/* Ensure the banner wrapper is positioned properly */
+.bls__banner-inner {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px; /* Adds rounded corners */
+}
+
+/* Bottom-to-top fading overlay */
+.bls__banner-inner::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Adjust to control fade length */
+    background: linear-gradient(to top, rgb(0 0 0 / 25%), rgba(0, 0, 0, 0)); /* Darker at bottom, fades to transparent */
+    z-index: 1;
+    pointer-events: none; /* Prevents overlay from blocking clicks */
+    border-radius: 20px; /* Ensures overlay follows rounded corners */
+}
+
+/* Ensure the text and button are above the overlay */
+.bls__banner-content {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Make sure links and buttons are fully clickable */
+.bls__banner-content a,
+.bls__banner-button a {
+    position: relative;
+    z-index: 3; /* Ensures buttons are above the overlay */
+    display: inline-block;
+}
+
+/* Fixes button clickability issue */
+.bls__banner-btn {
+    position: relative;
+    z-index: 3;
+    pointer-events: auto; /* Ensures button clicks work */
+}
+
+/* Ensure image fills the full height of its container */
+.bls__banner-media {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px; /* Ensures the image container has rounded corners */
+    overflow: hidden; /* Keeps image within the border-radius */
+}
+
+.bls__banner-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers container without distortion */
+    display: block;
+    border-radius: 20px; /* Ensures the image itself is rounded */
+}
+
+
+</style>
+
+  </body>
+</html>

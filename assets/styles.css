@@ -1,0 +1,99 @@
+<style>
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  display: inline-flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+  cursor: grab;
+}
+
+.carousel:active {
+  cursor: grabbing;
+}
+
+.carousel-item {
+  display: inline-block;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.bls__collection-title {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: start;
+}
+
+.padded-title {
+  padding: 10px 15px;
+  background: #f8fafd;
+  border-radius: 28px;
+  border: 1px solid #f0f0f0;
+}
+.padded-title:hover {
+  background: #f0f0f0;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.prev {
+  margin-right: 5px;
+}
+
+.next {
+  margin-left: 5px;
+}
+
+.fade-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  z-index: 1;
+}
+</style>

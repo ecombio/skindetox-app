@@ -1,0 +1,307 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {}
+    },
+    "ss_tech_collections_NGgHWa": {
+      "type": "ss-tech-collections",
+      "blocks": {
+        "collection_nUfzMW": {
+          "type": "collection",
+          "settings": {
+            "title": "TRACK ORDERS",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_4CDatP": {
+          "type": "collection",
+          "settings": {
+            "title": "REFUND ORDERS",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_cwgaaU": {
+          "type": "collection",
+          "settings": {
+            "title": "HELP CENTER",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_eqzbA4": {
+          "type": "collection",
+          "settings": {
+            "title": "CONTACT US",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_KHW8ML": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "Gaming",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_cXaFNr": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "Drones",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_AM4td9": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "Devices",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        },
+        "collection_RM4Wgq": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "More",
+            "url": "",
+            "image_fit": "cover",
+            "image_position_x": 0,
+            "image_position_y": 0,
+            "image_size": 100,
+            "image_padding_top": 0,
+            "image_padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_nUfzMW",
+        "collection_4CDatP",
+        "collection_cwgaaU",
+        "collection_eqzbA4",
+        "collection_KHW8ML",
+        "collection_cXaFNr",
+        "collection_AM4td9",
+        "collection_RM4Wgq"
+      ],
+      "custom_css": [
+        "{background-color: #f8fafd;}",
+        "@media (max-width: 1200px) {.tech-collections-grid {padding-left: 15px; padding-right: 15px; }}",
+        "@media screen and (min-width: 750px) {.tech-collections-grid {grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; display: grid; position: relative; bottom: -100px; margin-bottom: 100px; }}"
+      ],
+      "settings": {
+        "title": "",
+        "title_color": "#363636",
+        "title_alignment": "left",
+        "title_link": "",
+        "title_font_size": 40,
+        "font_color": "#000000",
+        "card_bg": "#ffffff",
+        "font_size": 14,
+        "icon_size": 6,
+        "card_border_width": 1,
+        "card_radius": 9,
+        "card_border_color": "#f0f0f0",
+        "shadow": false,
+        "background-color": "#FFFFFF",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "section-width": 120
+      }
+    },
+    "ss_video_socials_dkeVQk": {
+      "type": "ss-video-socials",
+      "blocks": {
+        "video_Pd9dBW": {
+          "type": "video",
+          "settings": {
+            "text": "",
+            "icon_type": "none"
+          }
+        }
+      },
+      "block_order": [
+        "video_Pd9dBW"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "heading_size": 36,
+        "heading_height": 130,
+        "heading_align": "center",
+        "items_mt": 36,
+        "items_mt_mobile": 10,
+        "items_type": "columns",
+        "items_type_mobile": "columns",
+        "columns_row": 1,
+        "columns_gap": 24,
+        "columns_gap_mobile": 24,
+        "slider_nav": "buttons",
+        "slider_nav_mobile": "pagination",
+        "slider_nav_size": 40,
+        "slider_nav_size_mobile": 30,
+        "slider_pagination_size": 15,
+        "slider_pagination_size_mobile": 10,
+        "item_radius": 12,
+        "item_border_thickness": 0,
+        "item_padding_horizontal": 0,
+        "item_padding_vertical": 0,
+        "video_size": "medium",
+        "video_size_mobile": "medium",
+        "icon_size": 60,
+        "icon_padding": 15,
+        "content_padding_horizontal": 16,
+        "content_padding_vertical": 20,
+        "text_custom": false,
+        "text_font": "assistant_n4",
+        "text_size": 16,
+        "text_height": 130,
+        "text_align": "center",
+        "link_text": "",
+        "link_url": "",
+        "link_custom": false,
+        "link_font": "assistant_n4",
+        "link_size": 18,
+        "link_height": 130,
+        "link_align": "center",
+        "link_mt": 36,
+        "link_radius": 12,
+        "link_border_thickness": 2,
+        "link_padding_horizontal": 50,
+        "link_padding_vertical": 16,
+        "hide_arrow": false,
+        "heading_color": "#120a0a",
+        "item_bg_color": "#ffffff",
+        "item_border_color": "#120a0a",
+        "icon_bg_color": "#e0c053",
+        "icon_color": "#ffffff",
+        "text_color": "#120a0a",
+        "slider_nav_btn_bg": "#ffffff",
+        "slider_nav_btn_hover_bg": "#e0c053",
+        "slider_nav_border": "#e0c053",
+        "slider_nav_border_hover": "#e0c053",
+        "slider_nav_icon": "#e0c053",
+        "slider_nav_hover_icon": "#ffffff",
+        "slider_pagination_color": "#e0c053",
+        "slider_pagination_hover_color": "#e0c053",
+        "link_text_color": "#120a0a",
+        "link_text_hover_color": "#ffffff",
+        "link_bg_color": "#ffffff",
+        "link_bg_hover_color": "#120a0a",
+        "link_border_color": "#120a0a",
+        "link_border_hover_color": "#120a0a",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 100,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "faq_q6GXEc": {
+      "type": "faq",
+      "blocks": {
+        "faq_d38MRh": {
+          "type": "faq",
+          "settings": {
+            "title": "Frequently Asked Questions?",
+            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        },
+        "faq_87DhzJ": {
+          "type": "faq",
+          "settings": {
+            "title": "Frequently Asked Questions?",
+            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_d38MRh",
+        "faq_87DhzJ"
+      ],
+      "custom_css": [
+        "{background-color: #f8fafd;}"
+      ],
+      "settings": {
+        "heading_logo_svg": "",
+        "subheading": "",
+        "heading": "Frequently Asked Questions",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container-fluid",
+        "color_scheme": "scheme-b808185a-cae7-47ba-9fe9-7d81ddf7e485",
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "reset_spacing": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ss_tech_collections_NGgHWa",
+    "ss_video_socials_dkeVQk",
+    "faq_q6GXEc"
+  ]
+}
