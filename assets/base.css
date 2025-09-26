@@ -7129,28 +7129,4 @@ recipient-form .recipient-fields__field:last-child {
 .show-noti-form .form-infor-wrapper svg {
     transform: translateY(-2px);
 }
-/* Ensure .popup-search-form itself has NO background */
-.popup-search-form {
-  background: transparent !important;
-  pointer-events: none; /* Prevent blocking clicks */
-}
 
-/* Only activate pointer events & background BELOW header */
-.popup-search-form::before {
-  content: "";
-  position: fixed;
-  top: 193px; /* ← match your header height */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  pointer-events: auto;
-  z-index: 9;
-}
-
-/* Raise the header so it stays fully visible + interactive */
-.site-header,
-.header-wrapper {
-  position: relative;
-  z-index: 9999;
-}
