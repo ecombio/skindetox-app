@@ -28,6 +28,24 @@
     assign transparent_topbar_class = 'transparent-topbar'
   endif
 -%}
+{% assign layout5_type = settings.layout5_search_type | default: 'popup' %}
+
+{% if layout5 %}
+  {% if layout5_type == 'popup' %}
+    <!-- block-search-full version -->
+    <div class="block-search-full search-layout-form color-default-color-scheme">
+      <!-- your popup search form, quick search, predictive search -->
+    </div>
+
+  {% elsif layout5_type == 'canvas' %}
+    <!-- search_type_canvas version -->
+    <div id="search-form" class="bls__opend-canvas-header">
+      <div class="search__type-canvas bls__canvas-top gradient color-default-color-scheme">
+        <!-- your canvas search form, quick search, predictive search -->
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
 
 <header
   id="page-header{{  id_suffix }}"
