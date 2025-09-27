@@ -137,6 +137,9 @@
       {%- render 'umino-home' -%}
       <div class="bls__overlay d-none-overlay"></div>
 
+{% render 'header' %}
+
+{%comment %}
 <div class="header header--desktop d-none-mb" aria-hidden="false">
   {% render 'header',
     forced_layout: 'h_layout5',
@@ -150,7 +153,8 @@
     id_suffix: '-mobile',
     output_schema_json: false %}
 </div>
-
+    {%endcomment %}
+    
       {% section 'announcement' %}
       <main
         id="MainContent"
