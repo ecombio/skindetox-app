@@ -1,16 +1,18 @@
-<div id="search-form" class="unified-search-form">
+<!-- snippets/unified-search.liquid -->
+<div id="search-form{{ id_suffix }}" class="unified-search-form">
   <div class="search__type-popup gradient">
     <div class="mini_search_header">
       <h4 class="widget-title text-center">Search Our Site</h4>
-      <button class="button-close"><i class="icon-x"></i></button>
+      <button class="button-close" aria-label="Close Search"><i class="icon-x"></i></button>
     </div>
 
-    <form action="/search" method="get" id="unified_search_form">
+    <form action="/search" method="get" id="unified_search_form{{ id_suffix }}">
       <input
-        type="text"
+        class="search__input field__input"
+        type="search"
         name="q"
-        placeholder="Search products..."
-        aria-label="Search"
+        placeholder="What are you looking for?"
+        maxlength="128"
         autocomplete="off"
       />
       <div class="predictive-search" data-predictive-search></div>
