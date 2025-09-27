@@ -76,7 +76,7 @@
     "space_for_desktop": 30,
     "space_for_tablet": 30,
     "space_for_mobile": 30,
-    "header_layout": "h_layout5",
+    "header_layout": "h_layout7",
     "layout5_search_type": "canvas",
     "container": "container-fluid",
     "sticky_header": true,
