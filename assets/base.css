@@ -7155,3 +7155,12 @@ recipient-form .recipient-fields__field:last-child {
   position: relative;
   z-index: 9999;
 }
+@media (max-width: 749px) {
+  .search__type-popup {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+}
