@@ -1,0 +1,333 @@
+{%- comment -%}
+  Desktop Search Bar Snippet
+  Usage: {% render 'desktop-search-bar' %}
+  This snippet is designed specifically for desktop display
+{%- endcomment -%}
+
+{%- liquid
+  assign search_terms = search.terms
+  assign predictive_search_type = settings.predictive_search_type
+  if predictive_search_type == 'search_suggest'
+    assign predictive_type = 'predictive_search_suggest'
+  else
+    assign predictive_type = 'predictive_search'
+  endif
+-%}
+
+<div class="desktop-search-bar {{ predictive_type }}">
+  <div class="desktop-search-container">
+    <form
+      action="{{ routes.search_url }}"
+      id="desktop_search_form"
+      method="get"
+      role="search"
+      class="desktop-search-form"
+    >
+      <div class="desktop-search-field">
+        <input
+          class="desktop-search-input"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ 'general.search.search' | t }}"
+          maxlength="128"
+          autocomplete="off"
+          {%- if settings.predictive_search_type == 'search_suggest' -%}
+            role="combobox"
+            aria-expanded="false"
+            aria-owns="desktop-predictive-search-results"
+            aria-controls="desktop-predictive-search-results"
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          {%- endif -%}
+        >
+        
+        <button
+          type="submit"
+          class="desktop-search-button"
+          aria-label="{{ 'general.search.search' | t }}"
+        >
+          <svg class="desktop-search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M12.5 11h-.79l-.28-.27C12.41 9.59 13 8.11 13 6.5 13 2.91 10.09 0 6.5 0S0 2.91 0 6.5 2.91 13 6.5 13c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L17.49 16l-4.99-5zm-6 0C4.01 11 2 8.99 2 6.5S4.01 2 6.5 2 11 4.01 11 6.5 8.99 11 6.5 11z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        {%- comment -%} Hidden inputs for search configuration {%- endcomment -%}
+        <input type="hidden" name="type" value="{% if settings.search_for == 'search_for_all' %}all{% else %}product{% endif %}">
+        <input type="hidden" name="options[unavailable_products]" value="{{ settings.unavailable_pr }}">
+        <input type="hidden" name="options[prefix]" value="last">
+        <input type="hidden" name="options[fields]" value="title,vendor,product_type,variants.title">
+      </div>
+    </form>
+
+    {%- comment -%} Predictive Search Results Container {%- endcomment -%}
+    {%- if settings.predictive_search -%}
+      <div id="desktop-predictive-search" class="desktop-predictive-search">
+        <div class="desktop-predictive-search-wrapper" data-predictive-search>
+          <div class="desktop-search-loading">
+            <div class="desktop-loading-spinner"></div>
+            <span class="desktop-loading-text">{{ 'general.search.searching' | t }}</span>
+          </div>
+        </div>
+        <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- comment -%} Desktop Search Bar Styles {%- endcomment -%}
+<style>
+  .desktop-search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .desktop-search-container {
+    position: relative;
+  }
+
+  .desktop-search-form {
+    width: 100%;
+  }
+
+  .desktop-search-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+
+  .desktop-search-field:focus-within {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+  }
+
+  .desktop-search-input {
+    flex: 1;
+    padding: 12px 50px 12px 16px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-family: inherit;
+    color: #333;
+    outline: none;
+  }
+
+  .desktop-search-input::placeholder {
+    color: #6b7280;
+  }
+
+  .desktop-search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .desktop-search-button:hover {
+    background-color: #f3f4f6;
+    color: #0066cc;
+  }
+
+  .desktop-search-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Predictive Search Styles */
+  .desktop-predictive-search {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.3s ease;
+  }
+
+  .desktop-predictive-search.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .desktop-search-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 8px;
+  }
+
+  .desktop-loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f4f6;
+    border-top: 2px solid #0066cc;
+    border-radius: 50%;
+    animation: desktop-spin 1s linear infinite;
+  }
+
+  @keyframes desktop-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .desktop-loading-text {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* Hide on mobile */
+  @media (max-width: 991px) {
+    .desktop-search-bar {
+      display: none;
+    }
+  }
+</style>
+
+{%- comment -%} Desktop Search Bar JavaScript {%- endcomment -%}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const desktopSearchInput = document.querySelector('.desktop-search-input');
+  const desktopSearchForm = document.querySelector('.desktop-search-form');
+  const desktopPredictiveSearch = document.querySelector('.desktop-predictive-search');
+  
+  if (!desktopSearchInput) return;
+
+  let searchTimeout;
+  let currentQuery = '';
+
+  // Handle input for predictive search
+  desktopSearchInput.addEventListener('input', function(e) {
+    const query = e.target.value.trim();
+    
+    clearTimeout(searchTimeout);
+
+    if (query === '') {
+      hidePredictiveSearch();
+      return;
+    }
+
+    // Debounce search
+    searchTimeout = setTimeout(() => {
+      if (query !== currentQuery && query.length >= 2) {
+        currentQuery = query;
+        performPredictiveSearch(query);
+      }
+    }, 300);
+  });
+
+  // Show/hide predictive search on focus/blur
+  desktopSearchInput.addEventListener('focus', function() {
+    if (currentQuery && desktopPredictiveSearch) {
+      showPredictiveSearch();
+    }
+  });
+
+  desktopSearchInput.addEventListener('blur', function() {
+    setTimeout(hidePredictiveSearch, 200);
+  });
+
+  // Handle escape key
+  desktopSearchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      hidePredictiveSearch();
+      e.target.blur();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.desktop-search-container')) {
+      hidePredictiveSearch();
+    }
+  });
+
+  function performPredictiveSearch(query) {
+    if (!desktopPredictiveSearch) return;
+
+    showPredictiveSearch();
+    
+    // Show loading state
+    const wrapper = desktopPredictiveSearch.querySelector('.desktop-predictive-search-wrapper');
+    if (wrapper) {
+      wrapper.innerHTML = `
+        <div class="desktop-search-loading">
+          <div class="desktop-loading-spinner"></div>
+          <span class="desktop-loading-text">Searching...</span>
+        </div>
+      `;
+    }
+
+    // Construct predictive search URL
+    const searchParams = new URLSearchParams({
+      'q': query,
+      'resources[type]': 'product',
+      'resources[limit]': '6',
+      'section_id': 'predictive-search'
+    });
+
+    const url = `${window.routes?.predictive_search_url || '/search/suggest'}?${searchParams.toString()}`;
+
+    // Fetch results
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        if (wrapper && currentQuery === query) {
+          wrapper.innerHTML = html || '<div class="desktop-search-loading"><span class="desktop-loading-text">No results found</span></div>';
+        }
+      })
+      .catch(error => {
+        console.error('Desktop predictive search error:', error);
+        if (wrapper) {
+          wrapper.innerHTML = '<div class="desktop-search-loading"><span class="desktop-loading-text">Search unavailable</span></div>';
+        }
+      });
+  }
+
+  function showPredictiveSearch() {
+    if (desktopPredictiveSearch) {
+      desktopPredictiveSearch.classList.add('show');
+      if (desktopSearchInput.hasAttribute('aria-expanded')) {
+        desktopSearchInput.setAttribute('aria-expanded', 'true');
+      }
+    }
+  }
+
+  function hidePredictiveSearch() {
+    if (desktopPredictiveSearch) {
+      desktopPredictiveSearch.classList.remove('show');
+      if (desktopSearchInput.hasAttribute('aria-expanded')) {
+        desktopSearchInput.setAttribute('aria-expanded', 'false');
+      }
+    }
+  }
+});
+</script>
