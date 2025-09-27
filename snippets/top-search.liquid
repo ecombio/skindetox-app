@@ -22,7 +22,7 @@
   endif
 -%}
 <div class="header_search {% if layout8 %}d-none-mb{% endif %}">
-  <div class="block block-quick-search block-search {{ predictive_type }}{% if layout4 or layout6 or layout8 %} search_type_popup {% else %} search_type_{{ search_type }}{% endif %}">
+  <div class="block block-quick-search block-search {{ predictive_type }}{% if layout4 or layout6 or layout8 %} search_type_popup {% elsif layout5 %} search_type_canvas {% else %} search_type_{{ search_type }}{% endif %}">
     {%- if layout4 or layout6 or layout8 -%}
       <div class="block-search-full search-layout-form color-default-color-scheme">
         <div class="search-modal search-full {% if layout4 %}mr-20{% endif %}">
@@ -166,12 +166,16 @@
     {%- endif -%}
     <div id="search-form">
       {% unless layout4 %}
-        {%- case search_type -%}
-          {%- when 'popup' -%}
-            {%- render 'search-popup' -%}
-          {%- when 'canvas' -%}
-            {%- render 'search-canvas' -%}
-        {%- endcase -%}
+        {%- if layout5 -%}
+          {%- render 'search-canvas' -%}
+        {%- else -%}
+          {%- case search_type -%}
+            {%- when 'popup' -%}
+              {%- render 'search-popup' -%}
+            {%- when 'canvas' -%}
+              {%- render 'search-canvas' -%}
+          {%- endcase -%}
+        {%- endif -%}
       {% endunless %}
     </div>
   </div>
