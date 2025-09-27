@@ -22,8 +22,8 @@
   endif
 -%}
 <div class="header_search {% if layout8 %}d-none-mb{% endif %}">
-  <div class="block block-quick-search block-search {{ predictive_type }}{% if layout4 or layout6 or layout8 %} search_type_popup {% else %} search_type_{{ search_type }}{% endif %}">
-    {%- if layout4 or layout6 or layout8 -%}
+  <div class="block block-quick-search block-search {{ predictive_type }}{% if layout4 or layout5  or layout6 or layout8 %} search_type_popup {% else %} search_type_{{ search_type }}{% endif %}">
+    {%- if layout4 or layout5 or layout6 or layout8 -%}
       <div class="block-search-full search-layout-form color-default-color-scheme">
         <div class="search-modal search-full {% if layout4 %}mr-20{% endif %}">
           <div class="search-modal__content">
@@ -151,7 +151,6 @@
         </div>
       </div>
     {%- else -%}
-      {%- comment -%} Now layout5 and layout7 both use this button toggle approach {%- endcomment -%}
       <div class="dropdown-toggle">
         <button
           class="btn-reset top-search-toggle bls_tooltip header-icon"
