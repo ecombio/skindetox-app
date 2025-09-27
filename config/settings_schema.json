@@ -1029,6 +1029,23 @@
         ]
       },
       {
+  "type": "select",
+  "id": "layout5_search_type",
+  "label": "Layout 5 Search Type",
+  "info": "Choose how search appears in Layout 5: popup modal or canvas slide-out.",
+  "options": [
+    {
+      "value": "popup",
+      "label": "Full Popup (block-search-full)"
+    },
+    {
+      "value": "canvas",
+      "label": "Slide-Out Canvas (search_type_canvas)"
+    }
+  ],
+  "default": "popup"
+},
+      {
         "type": "select",
         "id": "container",
         "label": "t:settings_schema.header.settings.title_layout.label",
