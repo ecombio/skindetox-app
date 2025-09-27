@@ -136,21 +136,24 @@
       {% endif %}
       {%- render 'umino-home' -%}
       <div class="bls__overlay d-none-overlay"></div>
+
 {%- render 'header' -%}
+
 <div class="header header--desktop d-none-mb" aria-hidden="false">
   {% render 'header',
     forced_layout: 'h_layout5',
     id_suffix: '-desktop',
     output_schema_json: true %}
 </div>
-
+{%comment %}
 <div class="header header--mobile d-none-desktop" aria-hidden="true">
   {% render 'header',
     forced_layout: 'h_layout7',
     id_suffix: '-mobile',
     output_schema_json: false %}
 </div>
-
+{% endcomment %}
+ 
       {% section 'announcement' %}
       <main
         id="MainContent"
